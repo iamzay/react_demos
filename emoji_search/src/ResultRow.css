@@ -1,0 +1,22 @@
+.result-row {
+    cursor:pointer;
+    border-top:1px solid silver;
+    padding:12px 6px;
+    width: 100%;
+    margin:0;
+    position: relative;
+}
+
+.result-row:hover {
+    background: #eee;
+}
+
+.result-row img {
+    width: 32px;
+    height: 32px;
+    vertical-align: text-bottom;
+}
+
+.result-row span {
+    margin-left:8px;
+}

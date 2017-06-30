@@ -1,0 +1,16 @@
+.header img {
+    width: 32px;
+    height: 32px;
+    vertical-align: bottom;
+}
+
+.header span {
+    font-size: 32px;
+    margin: 0 8px;
+}
+
+.header {
+    margin:10px auto;
+    min-width: 300px;
+    width: 300px;
+}
