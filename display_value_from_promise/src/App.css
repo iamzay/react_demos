@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    font-family: "WenQuanYi Micro Hei Mono", "WenQuanYi Micro Hei", "Microsoft Yahei Mono", "Microsoft Yahei", sans-serif, Simsun;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.item {
+    font-size: 80px;
+    color:#636b6f;
+    font-weight: 100;
+}
