@@ -1,0 +1,15 @@
+{
+  "libs": [
+    "browser",
+    "jquery",
+    "underscore"
+  ],
+  "loadEagerly": [
+    "*.js"
+  ],
+  "plugins": {
+    "node":{},
+    "modules":{},
+    "es_modules":{}
+  }
+}

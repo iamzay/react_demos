@@ -12,3 +12,20 @@ export default class App extends Component{
         )
     }
 }
+
+class Form extends Component {
+    constructor(props){
+        super(props);
+        this.state={username:'',password:''};
+    }
+
+    render(){
+        return (
+            <div>
+                <form>
+                    <input name="username" type="text" value=""/>
+                </form>
+            </div>
+        )
+    }
+}
