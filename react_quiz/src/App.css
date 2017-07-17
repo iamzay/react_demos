@@ -68,3 +68,11 @@ header {
     border-radius: 3px;
     cursor: pointer;
 }
+
+.answer {
+    color:#222;
+    max-width: 200px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+}

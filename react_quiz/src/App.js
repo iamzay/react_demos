@@ -5,19 +5,37 @@ import React from 'react';
 import './App.css';
 import logo from './svg/logo.svg';
 import Question from './components/Question';
-import quizQuestions from './api';
+import {connect} from 'react-redux';
+import Answer from './components/Answer';
 
-const App=()=>(
+const App=(props)=>(
     <div>
         <header>
-            <img src={logo} alt="react logo" className="logo"/>xs
+            <img src={logo} alt="react logo" className="logo"/>
             <h2 className="title">React Quiz</h2>
         </header>
-        <body>
-        <Question questionId={1} questionTotal={5} question={quizQuestions[0]}/>
-        <button className="nextButton">Next</button>
-        </body>
+        <main>
+            {(()=>{
+                if(props.questionId<5){
+                    return (<div>
+                        <Question questionTotal={5}/>
+                        <button className="nextButton" disabled={props.nextButtonDisabled} onClick={props.handleClick}>Next</button>
+                    </div>)
+                }
+                return <Answer result={props.result}/>
+            })()}
+        </main>
     </div>
 );
 
-export default App;
+const mapStateToProps=state=>({
+    nextButtonDisabled:state.nextButtonDisabled,
+    questionId:state.questionId,
+    result:state.result
+});
+
+const mapDispatchToProps=dispatch=>({
+    handleClick:()=>dispatch({type:'NEXT_QUESTION'})
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

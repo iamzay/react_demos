@@ -4,20 +4,21 @@
 const initialState={
     questionId:0,
     nextButtonDisabled:true,
-    result:{}
+    result:{},
+    answer:''
 };
 
-const reduer=(state=initialState,action)=>{
-    switch (aciton.type){
+const reducer=(state=initialState,action)=>{
+    switch (action.type){
         case 'ANSWER_CHANGED':
-            const {result:prevResult}=state.result;
-            const prevCnt=prevResult[action.answer]||0;
-            return {...state,nextButtonDisabled:false,result:{...prevResult,[action.answer]:prevCnt+1}};
+            return {...state,nextButtonDisabled:false,answer:action.answer};
         case 'NEXT_QUESTION':
-            return {...state,questionId:state.questionId+1};
+            const {result:prevResult}=state;
+            const prevCnt=prevResult[state.answer]||0;
+            return {...state,nextButtonDisabled:true,result:{...prevResult,[state.answer]:prevCnt+1},questionId:state.questionId+1,answer:''};
         default:
             return state;
     }
 };
 
-export default reduer;
+export default reducer;
