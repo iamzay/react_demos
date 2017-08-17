@@ -3,11 +3,10 @@
  */
 import React from 'react';
 import {render} from 'react-dom';
-import App from "./App.js";
+import NewsList from "./NewsList.js";
+import "./App.css";
 
 render(
-    <div>
-        hello world
-    </div>,
+    <NewsList />,
     document.getElementById('root')
 );
